@@ -1,0 +1,108 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+	
+    <title>LOGIN/SIGNUP</title>
+</head>
+<body>
+	<section>
+	<header>
+        <a href="index.html"><img src="/ResqueWalk.png" class="logo" width="100%"></a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </header>
+</section>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+	
+	<br>
+		<form action="#">
+			<h1>Create Account</h1>
+			<br>
+			<input type="text" placeholder="Full Name" />
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<input type="password" placeholder="Confirm Password" />
+			<br>
+			<button>Sign Up</button>
+			
+		</form>
+	</div>
+	<div class="form-container sign-in-container" id="sign-in-container">
+		<form action="#">
+			<h1>Sign In</h1>
+			
+			<br>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="javscript:;" id="forgotPassword">Forgot your password?</a>
+			<button>Sign In</button>
+			
+			
+		</form>
+	</div>
+	<div class="form-container forgot-password-container" id="forgot-password-container">
+		<form action="#">
+			<h1>Reset Password</h1>
+			
+			<br>
+			<input type="email" placeholder="Email" />
+			<br>
+			<button>Send Link</button>
+			<br>
+			<a href="javscript:;" id="goBack">Go Back</a>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login </p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p> Start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const forgotPasswordButton = document.getElementById('forgotPassword');
+const goBackButton = document.getElementById('goBack');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	document.getElementById("sign-in-container").style.display = "block";
+	document.getElementById("forgot-password-container").style.display = "none";
+	container.classList.remove("right-panel-active");
+});
+
+forgotPasswordButton.addEventListener('click', () => {
+	document.getElementById("sign-in-container").style.display = "none";
+	document.getElementById("forgot-password-container").style.display = "block";
+});
+
+goBackButton.addEventListener('click', () => {
+	document.getElementById("forgot-password-container").style.display = "none";
+	document.getElementById("sign-in-container").style.display = "block";
+});
+</script>
+
+
+
+</body>
+</html>
